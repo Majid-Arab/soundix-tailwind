@@ -59,7 +59,7 @@ function Navbar() {
           <div className="absolute inset-y-0 right-0 flex items-center justify-between gap-5 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             <button
               type="button"
-              className="relative rounded-md bg-[#D8F9FF] p-3 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
+              className="relative rounded-md bg-[#D8F9FF] p-3 text-[#047979] hover:text-black hover:border-2 hover:border-[#047979] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
             >
               <span className="absolute -inset-1.5"></span>
               <span className="sr-only">View notifications</span>
@@ -80,7 +80,7 @@ function Navbar() {
             </button>
             <button
               type="button"
-              className="relative rounded-md bg-[#D8F9FF] p-3 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
+              className="relative rounded-md bg-[#D8F9FF] p-3 text-[#047979] hover:text-black hover:border-2 hover:border-[#047979]  focus:outline-none focus:ring-2 focus:ring-[#047979] focus:ring-offset-2"
             >
               <span className="absolute -inset-1.5"></span>
               <span className="sr-only">View notifications</span>
