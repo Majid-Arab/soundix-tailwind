@@ -7,7 +7,7 @@ import Avatar from "../../public/avatar.png";
 function Navbar() {
   return (
     <nav className="">
-      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-2">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             <button

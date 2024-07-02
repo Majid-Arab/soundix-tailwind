@@ -17,8 +17,32 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Navbar />{children}</body>
+      <body className="h-screen flex">
+    {/* <!-- Sidebar --> */}
+    <div className="h-full w-72 bg-gray-800 text-white flex-shrink-0">
+        Sidebar
+    </div>
+    
+    <div className="flex flex-col w-full">
+        {/* <!-- Header --> */}
+        <header className="h-16 w-full bg-gray-600">
+            <Navbar />
+        </header>
+        
+        <div className="flex flex-grow">
+            
+            {/* <!-- Main Content --> */}
+            <main className="flex-grow bg-gray-200">
+                {children}
+            </main>
+
+            {/* <!-- Aside --> */}
+            <aside className="h-full w-96 bg-gray-400 flex-shrink-0">
+                Aside
+            </aside>
+        </div>
+    </div>
+</body>
     </html>
   );
 }
