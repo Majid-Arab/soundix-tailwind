@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Logo from "../../public/logo.png";
 import Avatar from "../../public/avatar.png";
+import { IconAdjustmentsHorizontal, IconSearch } from "@tabler/icons-react";
 
 function Navbar() {
   return (
@@ -56,6 +57,31 @@ function Navbar() {
             </div>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center justify-between gap-5 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            <div className="relative text-gray-600 focus-within:text-gray-400">
+              <span className="absolute inset-y-0 left-0 flex items-center pl-2">
+                <button
+                  type="submit"
+                  className="p-1 focus:outline-none focus:shadow-outline"
+                >
+                  <IconSearch stroke={1} />
+                </button>
+              </span>
+              <input
+                type="search"
+                name="q"
+                className="py-2 text-sm text-white shadow-lg rounded-md pl-10 focus:outline-none focus:bg-white focus:text-gray-900"
+                placeholder="Search..."
+              />
+
+              <span className="absolute inset-y-0 right-0 flex items-center pl-2">
+                <button
+                  type="submit"
+                  className="p-1 focus:outline-none focus:shadow-outline"
+                >
+                  <IconAdjustmentsHorizontal stroke={1} />
+                </button>
+              </span>
+            </div>
             <button
               type="button"
               className="relative rounded-md bg-[#D8F9FF] p-3 text-[#047979] hover:text-black hover:border-2 hover:border-[#047979] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
@@ -119,7 +145,7 @@ function Navbar() {
                   />
                 </button>
               </div>
-                {/* <div
+              {/* <div
                   className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
                   role="menu"
                   aria-orientation="vertical"
