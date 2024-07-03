@@ -20,13 +20,13 @@ export default function RootLayout({
     <html lang="en">
       <body className="h-screen flex">
     {/* <!-- Sidebar --> */}
-    <div className="h-full w-72 text-white flex-shrink-0">
+    <div className="h-full w-72 text-white flex-shrink-0 py-3">
         <Sidebar />
     </div>
     
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full gap-3">
         {/* <!-- Header --> */}
-        <header className="h-16 w-full">
+        <header className="h-16 w-full py-3">
             <Navbar />
         </header>
         
