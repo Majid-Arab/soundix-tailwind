@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Sidebar from "@/components/sidebar";
+import AsideBar from "@/components/asidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -39,7 +40,7 @@ export default function RootLayout({
 
             {/* <!-- Aside --> */}
             <aside className="h-full w-96 flex-shrink-0">
-                Aside
+                <AsideBar />
             </aside>
         </div>
     </div>
