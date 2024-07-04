@@ -3,18 +3,45 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Product from "../../public/headphone.png";
-import { IconHeartFilled, IconMinus, IconPlus } from "@tabler/icons-react";
+import {
+  IconHeartFilled,
+  IconMinus,
+  IconPlus,
+  IconStarFilled,
+} from "@tabler/icons-react";
 import Rating from "@/components/rating";
-import Slide from "../../public/avatar.png";
 import Slide1 from "../../public/headphone.png";
 import Slide2 from "../../public/headphone1.png";
 
 const slides = [
-  { src: Slide, alt: "Slide 1" },
-  { src: Slide1, alt: "Slide 2" },
-  { src: Slide2, alt: "Slide 3" },
-  { src: Slide, alt: "Slide 4" },
-  { src: Slide1, alt: "Slide 5" },
+  {
+    src: Slide2,
+    alt: "Slide1 1",
+    title: "original bests solo pro",
+    price: 333.35,
+    rating: 0,
+  },
+  {
+    src: Slide1,
+    alt: "Slide 1",
+    title: "original bests solo pro",
+    price: 333.35,
+    rating: 0,
+  },
+  {
+    src: Slide2,
+    alt: "Slide 1",
+    title: "original bests solo pro",
+    price: 333.35,
+    rating: 0,
+  },
+  {
+    src: Slide1,
+    alt: "Slide 1",
+    title: "original bests solo pro",
+    price: 333.35,
+    rating: 0,
+  },
 ];
 
 function Home() {
@@ -93,9 +120,9 @@ function Home() {
         </div>
       </div>
 
-      <div className="relative w-full overflow-hidden">
+      <div className="relative w-[1000px] overflow-hidden">
         <div
-          className="flex transition-transform duration-700"
+          className="flex gap-5  transition-transform duration-700"
           style={{
             width: `calc(100% * ${slides.length / 3.5})`,
             transform: `translateX(-${(100 / slides.length) * activeSlide}%)`,
@@ -104,16 +131,26 @@ function Home() {
           {slides.map((slide, index) => (
             <div
               key={index}
-              className="flex-shrink-0"
+              className="flex-shrink-0 bg-white rounded-2xl shadow-xl"
               style={{
                 width: `calc(100% / 3.5)`,
               }}
             >
               <Image
                 src={slide.src}
-                className="block w-full h-full object-contain"
+                className="w-40 h-40 object-contain"
                 alt={slide.alt}
               />
+              <div className="font-bold">{slide.title}</div>
+              <div className="font-semibold">Price ${slide.price}</div>
+              <div className="flex items-center justify-between">
+                <span className="flex items-center gap-1">
+                  <IconStarFilled /> {slide.rating}
+                </span>
+                <div className="bg-[#009393] relative rounded-full p-1 text-white font-semibold">
+                  <IconPlus stroke={2} color="white" />
+                </div>
+              </div>
             </div>
           ))}
         </div>
