@@ -63,14 +63,14 @@ function Navbar() {
                   type="submit"
                   className="p-1 focus:outline-none focus:shadow-outline"
                 >
-                  <IconSearch stroke={1} />
+                  <IconSearch stroke={2} />
                 </button>
               </span>
               <input
                 type="search"
                 name="q"
-                className="py-2 text-sm text-white shadow-lg rounded-md pl-10 focus:outline-none focus:bg-white focus:text-gray-900"
-                placeholder="Search..."
+                className="py-2 text-xl text-white shadow-lg rounded-md pl-10 focus:outline-none focus:bg-white focus:text-gray-900"
+                placeholder="Search Product"
               />
 
               <span className="absolute inset-y-0 right-0 flex items-center pl-2">
@@ -78,7 +78,7 @@ function Navbar() {
                   type="submit"
                   className="p-1 focus:outline-none focus:shadow-outline"
                 >
-                  <IconAdjustmentsHorizontal stroke={1} />
+                  <IconAdjustmentsHorizontal stroke={2} />
                 </button>
               </span>
             </div>
