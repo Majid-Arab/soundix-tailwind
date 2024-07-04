@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Product from "../../public/product.png";
 
 export default function Home() {
   return (
@@ -6,11 +7,7 @@ export default function Home() {
       <div className="bg-white p-4 shadow rounded">
         <h1 className="text-2xl font-bold">Beats Studio3 Wireless Headphone</h1>
         <div className="flex space-x-4">
-          <Image
-            src="https://example.com/headphone.png"
-            alt="Beats Studio3"
-            className="w-32 h-32"
-          />
+          <Image src={Product} alt="Beats Studio3" className="w-32 h-32" />
           <div className="flex flex-col">
             <p>
               Ergonomics on point. Up to 22 hours of listening time. Apple W1
