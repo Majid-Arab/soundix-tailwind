@@ -13,7 +13,7 @@ import Rating from "@/components/rating";
 function Home() {
   return (
     <div className="flex justify-center items-center">
-      <div className="flex justify- items-center gap-5 h-[400px] w-[1000px] p-4 m-5 rounded-2xl shadow-2xl">
+      <div className="flex justify- items-center gap-5 h-[400px] w-[1000px] p-4 rounded-2xl shadow-2xl">
         <div className="px-5 ">
           <span className="">
             <Image src={Product} alt="" width={600} height={500} />
