@@ -1,28 +1,42 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
 import Product from "../../public/headphone.png";
-import {
-  IconArrowNarrowRight,
-  IconHeartFilled,
-  IconMinus,
-  IconPlus,
-  IconPointFilled,
-} from "@tabler/icons-react";
+import { IconHeartFilled, IconMinus, IconPlus } from "@tabler/icons-react";
 import Rating from "@/components/rating";
 import Slide from "../../public/avatar.png";
 import Slide1 from "../../public/headphone.png";
 import Slide2 from "../../public/headphone1.png";
 
+const slides = [
+  { src: Slide, alt: "Slide 1" },
+  { src: Slide1, alt: "Slide 2" },
+  { src: Slide2, alt: "Slide 3" },
+  { src: Slide, alt: "Slide 4" },
+  { src: Slide1, alt: "Slide 5" },
+];
+
 function Home() {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  const handlePrev = () => {
+    setActiveSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setActiveSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+  };
+
   return (
     <div className="flex flex-col justify-center items-center">
-      <div className="flex justify- items-center gap-5 h-[400px] w-[1000px] p-4 rounded-2xl shadow-2xl">
-        <div className="px-5 ">
+      <div className="flex justify-between items-center gap-5 h-[400px] w-[1000px] p-4 rounded-2xl shadow-2xl">
+        <div className="px-5 flex-1">
           <span className="">
             <Image src={Product} alt="" width={600} height={500} />
           </span>
         </div>
-        <div>
+        <div className="flex-1">
           <h2 className="font-bold text-2xl capitalize py-2">
             Summer headphones from top brands
           </h2>
@@ -34,7 +48,7 @@ function Home() {
             totam corrupti modi debitis
           </p>
 
-          <span className="text-2xl py-3  text-[#00D4BC]">Price $ 359.90</span>
+          <span className="text-2xl py-3 text-[#00D4BC]">Price $ 359.90</span>
           <div className="flex justify-between">
             <span className="flex items-center gap-3 text-2xl font-semibold py-2">
               Color
@@ -65,7 +79,7 @@ function Home() {
             </button>
             <button
               type="button"
-              className="relative text-2xl rounded-xl p-3 text-[#047979]  border-2 border-[#047979] hover:bg-[#047979] hover:text-white "
+              className="relative text-2xl rounded-xl p-3 text-[#047979] border-2 border-[#047979] hover:bg-[#047979] hover:text-white "
             >
               Add to cart
             </button>
@@ -79,55 +93,34 @@ function Home() {
         </div>
       </div>
 
-      <div
-        id="controls-carousel"
-        className="relative w-full"
-        data-carousel="static"
-      >
-        <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
-          <div className="hidden duration-700 ease-in-out" data-carousel-item>
-            <Image
-              src={Slide}
-              className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              alt="..."
-            />
-          </div>
-          <div
-            className="hidden duration-700 ease-in-out"
-            data-carousel-item="active"
-          >
-            <Image
-              src={Slide}
-              className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              alt="..."
-            />
-          </div>
-          <div className="hidden duration-700 ease-in-out" data-carousel-item>
-            <Image
-              src={Slide1}
-              className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              alt="..."
-            />
-          </div>
-          <div className="hidden duration-700 ease-in-out" data-carousel-item>
-            <Image
-              src={Slide2}
-              className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              alt="..."
-            />
-          </div>
-          <div className="hidden duration-700 ease-in-out" data-carousel-item>
-            <Image
-              src={Slide}
-              className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              alt="..."
-            />
-          </div>
+      <div className="relative w-full overflow-hidden">
+        <div
+          className="flex transition-transform duration-700"
+          style={{
+            width: `calc(100% * ${slides.length / 3.5})`,
+            transform: `translateX(-${(100 / slides.length) * activeSlide}%)`,
+          }}
+        >
+          {slides.map((slide, index) => (
+            <div
+              key={index}
+              className="flex-shrink-0"
+              style={{
+                width: `calc(100% / 3.5)`,
+              }}
+            >
+              <Image
+                src={slide.src}
+                className="block w-full h-full object-contain"
+                alt={slide.alt}
+              />
+            </div>
+          ))}
         </div>
         <button
           type="button"
-          className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-          data-carousel-prev
+          className="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          onClick={handlePrev}
         >
           <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
             <svg
@@ -139,9 +132,9 @@ function Home() {
             >
               <path
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M5 1 1 5l4 4"
               />
             </svg>
@@ -150,8 +143,8 @@ function Home() {
         </button>
         <button
           type="button"
-          className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-          data-carousel-next
+          className="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          onClick={handleNext}
         >
           <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
             <svg
@@ -163,9 +156,9 @@ function Home() {
             >
               <path
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="m1 9 4-4-4-4"
               />
             </svg>
