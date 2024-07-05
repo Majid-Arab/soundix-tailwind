@@ -16,7 +16,7 @@ function ProducDetail() {
       </div>
       <div className="flex-1">
         <h2 className="font-bold text-2xl capitalize py-2">
-          Summer headphones from top brands
+         Bests Studio 3 Wireless headphone
         </h2>
         <Rating />
         <p className="py-4">

@@ -1,16 +1,27 @@
 import { IconMinus, IconPlus } from "@tabler/icons-react";
-import React from "react";
+import React, { useState } from "react";
 
 function ProductCount() {
+  const [count, setCount] = useState(0);
+
+  const incrementCount = () => setCount(count + 1);
+  const decrementCount = () => setCount(count > 0 ? count - 1 : 0);
+
   return (
-    <div className="flex items-center gap-3 bg-gray-100 rounded-full p-1 text-black font-semibold h-8">
-      <span className="bg-white rounded-full text-black">
+    <div className="flex items-center gap-3 bg-gray-100 rounded-full p-1 text-black font-semibold h-10">
+      <button
+        className="bg-white rounded-full text-black p-1"
+        onClick={decrementCount}
+      >
         <IconMinus stroke={1} />
-      </span>
-      <span className="px-4 text-xl">1</span>
-      <span className="bg-white rounded-full text-black">
+      </button>
+      <span className="px-4 text-xl">{count}</span>
+      <button
+        className="bg-white rounded-full text-black p-1"
+        onClick={incrementCount}
+      >
         <IconPlus stroke={1} />
-      </span>
+      </button>
     </div>
   );
 }
