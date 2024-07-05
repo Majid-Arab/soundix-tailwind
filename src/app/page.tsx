@@ -10,9 +10,9 @@ import {
   IconMinus,
   IconPlus,
   IconStarFilled,
-} from "@tabler/icons-react";
+} from "@tabler/icons-react"; 
+import Rating from "@/components/main/rating";
 import Product from "../../public/headphone.png";
-import Rating from "@/components/rating";
 import Slide1 from "../../public/headphone.png";
 import Slide2 from "../../public/headphone1.png";
 

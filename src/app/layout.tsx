@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/navbar";
-import Sidebar from "@/components/sidebar";
-import AsideBar from "@/components/asidebar";
+import Navbar from "@/components/navbar/navbar";
+import Sidebar from "@/components/sidebar/index";
+import AsideBar from "@/components/asidebar/asidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,31 +20,28 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="h-screen flex">
-    {/* <!-- Sidebar --> */}
-    <div className="h-full w-72 text-white flex-shrink-0 py-3">
-        <Sidebar />
-    </div>
-    
-    <div className="flex flex-col w-full gap-3">
-        {/* <!-- Header --> */}
-        <header className="h-16 w-full py-3">
+        {/* <!-- Sidebar --> */}
+        <div className="h-full w-72 text-white flex-shrink-0 py-3">
+          <Sidebar />
+        </div>
+
+        <div className="flex flex-col w-full gap-3">
+          {/* <!-- Header --> */}
+          <header className="h-16 w-full py-3">
             <Navbar />
-        </header>
-        
-        <div className="flex flex-grow">
-            
+          </header>
+
+          <div className="flex flex-grow">
             {/* <!-- Main Content --> */}
-            <main className="flex-grow">
-                {children}
-            </main>
+            <main className="flex-grow">{children}</main>
 
             {/* <!-- Aside --> */}
             <aside className="h-full w-96 flex-shrink-0">
-                <AsideBar />
+              <AsideBar />
             </aside>
+          </div>
         </div>
-    </div>
-</body>
+      </body>
     </html>
   );
 }
