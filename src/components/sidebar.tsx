@@ -20,7 +20,7 @@ function sidebar() {
       </div>
       <nav className="pt-6">
         <ul>
-          <li>
+          <li className="relative">
             <a
               href="#"
               className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-[#009292] pr-6 my-3"
@@ -32,6 +32,7 @@ function sidebar() {
                 Home
               </span>
             </a>
+            <span className="absolute left-0 w-2 h-2 bg-[#151616] rounded-full -ml-2"></span>
           </li>
           <li>
             <a

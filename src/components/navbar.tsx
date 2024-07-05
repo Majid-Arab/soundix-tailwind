@@ -84,7 +84,7 @@ function Navbar() {
             </div>
             <button
               type="button"
-              className="relative rounded-md bg-[#D8F9FF] p-3 text-[#047979] hover:text-black hover:border-2 hover:border-[#047979] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
+              className="relative rounded-md bg-[#D8F9FF] p-3 text-[#047979] hover:text-white hover:bg-[#047979]"
             >
               <span className="absolute -inset-1.5"></span>
               <span className="sr-only">View notifications</span>
@@ -105,7 +105,7 @@ function Navbar() {
             </button>
             <button
               type="button"
-              className="relative rounded-md bg-[#D8F9FF] p-3 text-[#047979] hover:text-black hover:border-2 hover:border-[#047979]  focus:outline-none focus:ring-2 focus:ring-[#047979] focus:ring-offset-2"
+              className="relative rounded-md bg-[#D8F9FF] p-3 text-[#047979] hover:text-white hover:bg-[#047979]"
             >
               <span className="absolute -inset-1.5"></span>
               <span className="sr-only">View notifications</span>
