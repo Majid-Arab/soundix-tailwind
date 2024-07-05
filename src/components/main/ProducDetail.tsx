@@ -8,7 +8,7 @@ import ProductCount from "./productCount";
 
 function ProducDetail() {
   return (
-    <div className="flex justify-between items-center gap-5 h-[400px] w-[1000px] p-4 rounded-2xl shadow-2xl">
+    <div className="flex justify-between items-center gap-5 h-[400px] p-4 rounded-2xl shadow-2xl">
       <div className="px-5 w-1/3">
         <span className="inline-block ">
           <Image src={Product} alt="" width={1000} height={500} />

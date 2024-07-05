@@ -37,7 +37,7 @@ const slides = [
 
 function Card() {
   return (
-    <div className="flex flex-col gap-5 w-[1000px]  p-4 pb-20">
+    <div className="flex flex-col gap-5 p-4 pb-20">
       <div className="flex gap-3">
         <span className="text-3xl font-bold text-[#016173]">
           Explore Popular Categories

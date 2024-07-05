@@ -47,7 +47,7 @@ function Carousel() {
     setActiveSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
   };
   return (
-    <div className="relative w-[1000px] overflow-hidden  p-4">
+    <div className="relative overflow-hidden p-4">
       <div
         className="flex gap-6 transition-transform duration-700"
         style={{
@@ -58,7 +58,7 @@ function Carousel() {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className="flex flex-col justify-between items-center gap-6 p-5 flex-shrink-0 bg-white rounded-2xl shadow-2xl shadow-l- shadow-inner-white shadow-inner-2xl"
+            className="flex flex-col justify-between items-center gap-6 p-5 flex-shrink-0 bg-white rounded-2xl shadow-2xl"
             style={{
               width: `calc(100% / 4.5)`,
             }}
@@ -101,7 +101,7 @@ function Carousel() {
       </button>
       <button
         type="button"
-        className="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        className="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none "
         onClick={handleNext}
       >
         <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white shadow-gray shadow-lg  group-hover:bg-white dark:group-hover:bg-gray-400/60">

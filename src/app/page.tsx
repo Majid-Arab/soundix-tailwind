@@ -21,7 +21,7 @@ import Card from "@/components/main/card";
 
 function Home() {
   return (
-    <div className="flex flex-col items-center gap-10">
+    <div className="flex flex-col items-center gap-10 w-[1000px] xl:w-[650px]">
       <ProductDetail />
 
       <Carousel />
