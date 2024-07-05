@@ -2,13 +2,16 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import Product from "../../public/headphone.png";
 import {
+  IconArrowRight,
+  IconChevronLeft,
+  IconChevronRight,
   IconHeartFilled,
   IconMinus,
   IconPlus,
   IconStarFilled,
 } from "@tabler/icons-react";
+import Product from "../../public/headphone.png";
 import Rating from "@/components/rating";
 import Slide1 from "../../public/headphone.png";
 import Slide2 from "../../public/headphone1.png";
@@ -56,11 +59,11 @@ function Home() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col items-center gap-10">
       <div className="flex justify-between items-center gap-5 h-[400px] w-[1000px] p-4 rounded-2xl shadow-2xl">
-        <div className="px-5 flex-1">
-          <span className="">
-            <Image src={Product} alt="" width={600} height={500} />
+        <div className="px-5 w-1/3">
+          <span className="inline-block ">
+            <Image src={Product} alt="" width={1000} height={500} />
           </span>
         </div>
         <div className="flex-1">
@@ -120,9 +123,9 @@ function Home() {
         </div>
       </div>
 
-      <div className="relative w-[1000px] overflow-hidden">
+      <div className="relative w-[1000px] overflow-hidden  p-4">
         <div
-          className="flex gap-5  transition-transform duration-700"
+          className="flex gap-6 transition-transform duration-700"
           style={{
             width: `calc(100% * ${slides.length / 3.5})`,
             transform: `translateX(-${(100 / slides.length) * activeSlide}%)`,
@@ -131,9 +134,9 @@ function Home() {
           {slides.map((slide, index) => (
             <div
               key={index}
-              className="flex-shrink-0 bg-white rounded-2xl shadow-xl"
+              className="flex flex-col justify-between items-center gap-6 p-5 flex-shrink-0 bg-white rounded-2xl shadow-2xl shadow-l- shadow-inner-white shadow-inner-2xl"
               style={{
-                width: `calc(100% / 3.5)`,
+                width: `calc(100% / 4.5)`,
               }}
             >
               <Image
@@ -141,14 +144,18 @@ function Home() {
                 className="w-40 h-40 object-contain"
                 alt={slide.alt}
               />
-              <div className="font-bold">{slide.title}</div>
-              <div className="font-semibold">Price ${slide.price}</div>
-              <div className="flex items-center justify-between">
-                <span className="flex items-center gap-1">
-                  <IconStarFilled /> {slide.rating}
-                </span>
-                <div className="bg-[#009393] relative rounded-full p-1 text-white font-semibold">
-                  <IconPlus stroke={2} color="white" />
+              <div>
+                <div className="font-bold capitalize">{slide.title}</div>
+                <div className="text-sm font-medium py-1">
+                  Price ${slide.price}
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="flex items-start text-[#00E0C6] gap-1 pt-2">
+                    <IconStarFilled color="#00E0C6" size={20} /> {slide.rating}
+                  </span>
+                  <div className="bg-[#009393] relative rounded-full p-1 text-white font-semibold">
+                    <IconPlus stroke={2} color="white" />
+                  </div>
                 </div>
               </div>
             </div>
@@ -159,22 +166,11 @@ function Home() {
           className="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
           onClick={handlePrev}
         >
-          <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg
+          <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white shadow-gray shadow-lg  group-hover:bg-white/50 dark:group-hover:bg-gray-800/60">
+            <IconChevronLeft
               className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 6 10"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M5 1 1 5l4 4"
-              />
-            </svg>
+              stroke={3}
+            />
             <span className="sr-only">Previous</span>
           </span>
         </button>
@@ -183,25 +179,76 @@ function Home() {
           className="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
           onClick={handleNext}
         >
-          <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg
+          <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white shadow-gray shadow-lg  group-hover:bg-white dark:group-hover:bg-gray-400/60">
+            <IconChevronRight
               className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 6 10"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="m1 9 4-4-4-4"
-              />
-            </svg>
+              stroke={3}
+            />
+
             <span className="sr-only">Next</span>
           </span>
         </button>
+      </div>
+
+      <div className="flex flex-col gap-5 w-[1000px]  p-4 pb-20">
+        <div className="flex gap-3">
+          <span className="text-3xl font-bold text-[#016173]">
+            Explore Popular Categories
+          </span>
+          <button
+            type="button"
+            className="flex items-center text-black text-sm font-semibold hover:text-[#047979] "
+          >
+            Sell all
+            <span className="text-xs">
+              <IconArrowRight stroke={2} />
+            </span>
+          </button>
+        </div>
+        <div className="flex justify-center gap-8">
+          <div className="flex justify-between items-center gap-6 h-40 shadow-xl p-8 rounded-2xl bg-white">
+            <div className="flex items-center space-x-[-10px] relative">
+              {slides.map((slide, index) => (
+                <div
+                  key={index}
+                  className="flex -space-x-4 rtl:space-x-reverse"
+                >
+                  <Image
+                    className="w-10 h-10 border-2 rounded-full "
+                    src={slide.src}
+                    alt={slide.alt}
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="border-l-2 border-black h-full mx-5"></div>
+            <div className="flex flex-col gap-4">
+              <h2 className="font-bold text-lg">Popular top 10 brands</h2>
+              <span className="text-gray-600">5,600+ Orders & Reviews</span>
+            </div>
+          </div>
+          <div className="flex justify-between items-center gap-6 h-40 shadow-xl p-8 rounded-2xl bg-white">
+            <div className="flex items-center space-x-[-10px] relative">
+              {slides.map((slide, index) => (
+                <div
+                  key={index}
+                  className="flex -space-x-4 rtl:space-x-reverse"
+                >
+                  <Image
+                    className="w-10 h-10 border-2 rounded-full "
+                    src={slide.src}
+                    alt={slide.alt}
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="border-l-2 border-black h-full mx-5"></div>
+            <div className="flex flex-col gap-4">
+              <h2 className="font-bold text-lg">Newest Seller</h2>
+              <span className="text-gray-600">5,600+ Orders & Reviews</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
