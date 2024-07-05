@@ -20,10 +20,11 @@ function sidebar() {
       </div>
       <nav className="pt-6">
         <ul>
-          <li className="relative">
+          <li className="relative flex  items-center">
+            <span className="absolute left-0 w-4 h-6  bg-[#009292] rounded-md -ml-2"></span>
             <a
               href="#"
-              className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-[#009292] pr-6 my-3"
+              className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent pr-6 my-3"
             >
               <span className="inline-flex justify-center items-center ml-5">
                 <IconHome stroke={2} />
@@ -32,7 +33,6 @@ function sidebar() {
                 Home
               </span>
             </a>
-            <span className="absolute left-0 w-2 h-2 bg-[#151616] rounded-full -ml-2"></span>
           </li>
           <li>
             <a
