@@ -58,27 +58,27 @@ function Carousel() {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className="flex flex-col justify-between items-center gap-6 p-5 flex-shrink-0 bg-white rounded-2xl shadow-2xl"
+            className="flex flex-col justify-between items-center gap-6 p-5 xl:gap-0 xl:p-3 flex-shrink-0 bg-white rounded-2xl shadow-2xl"
             style={{
-              width: `calc(100% / 4.5)`,
+              width: `calc(100% / 4.1)`,
             }}
           >
             <Image
               src={slide.src}
-              className="w-40 h-40 object-contain"
+              className="w-40 h-40 object-contain xl:w-24 xl:h-2w-24"
               alt={slide.alt}
             />
             <div>
-              <div className="font-bold capitalize">{slide.title}</div>
-              <div className="text-sm font-medium py-1">
+              <div className="font-bold capitalize xl:text-xs">{slide.title}</div>
+              <div className="text-sm font-medium py-1 xl:text-xs">
                 Price ${slide.price}
               </div>
               <div className="flex items-center justify-between">
                 <span className="flex items-start text-[#00E0C6] gap-1 pt-2">
-                  <IconStarFilled color="#00E0C6" size={20} /> {slide.rating}
+                  <IconStarFilled color="#00E0C6" size={18} /> {slide.rating}
                 </span>
                 <div className="bg-[#009393] relative rounded-full p-1 text-white font-semibold">
-                  <IconPlus stroke={2} color="white" />
+                  <IconPlus stroke={2} color="white" size={18}/>
                 </div>
               </div>
             </div>

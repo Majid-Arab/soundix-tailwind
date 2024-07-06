@@ -8,19 +8,19 @@ function button() {
         type="button"
         className="relative rounded-xl p-3 text-[#047979] hover:text-[#da3535] border-2 border-[#047979] "
       >
-        <span className="text-xs">
-          <IconHeartFilled stroke={2} className="w-10 h-10" />
+        <span>
+          <IconHeartFilled stroke={2} className="w-10 h-10 xl:w-7 xl:h-7" />
         </span>
       </button>
       <button
         type="button"
-        className="relative text-2xl rounded-xl p-3 text-[#047979] border-2 border-[#047979] hover:bg-[#047979] hover:text-white "
+        className="relative text-2xl xl:text-lg rounded-xl p-3 text-[#047979] border-2 border-[#047979] hover:bg-[#047979] hover:text-white "
       >
         Add to cart
       </button>
       <button
         type="button"
-        className="relative text-2xl rounded-xl p-3 bg-[#047979] px-8 text-white border-2 border-[#047979] hover:bg-[#415353] "
+        className="relative text-2xl xl:text-xl rounded-xl p-3 bg-[#047979] px-8 text-white border-2 border-[#047979] hover:bg-[#415353] "
       >
         Buy now
       </button>

@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="h-screen flex">
+      <body className="h-screen flex font-sans">
         {/* <!-- Sidebar --> */}
         <div className="h-full w-72 text-white flex-shrink-0 py-3">
           <Sidebar />
