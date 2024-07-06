@@ -37,7 +37,7 @@ function ProductTable() {
         <li key={index}>
           <a
             href="#"
-            className="relative flex flex-row justify-between py-1 focus:outline-none text-gray-600 hover:text-gray-800 hover:underline border-l-4 border-transparent pr-6 my-3"
+            className="relative flex flex-row justify-between py-1 none text-gray-600 hover:text-gray-800 hover:underline my-3"
           >
             <div className="flex">
               <span className="inline-flex justify-center items-center ml-5">

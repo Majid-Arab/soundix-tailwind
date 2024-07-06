@@ -30,8 +30,6 @@ function Popup() {
             aria-expanded="false"
             aria-haspopup="true"
           >
-            <span className="absolute -inset-1.5"></span>
-            <span className="sr-only">Open user menu</span>
             <Image
               className="h-12 w-12 rounded-full"
               src={Avatar}

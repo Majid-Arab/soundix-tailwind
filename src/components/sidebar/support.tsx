@@ -21,7 +21,7 @@ function Support() {
         </p>
         <button
           type="button"
-          className="bg-white border-white border-2 relative rounded-lg px-4 py-2  text-[#047979] text-sm font-semibold hover:border-2 hover:border-[#047979]  focus:outline-none focus:ring-2 focus:ring-[#047979] focus:ring-offset-2"
+          className="bg-white relative rounded-lg px-4 py-2  text-[#047979] text-sm font-semibold hover:bg-[#eceeee]"
         >
           Customer Service
         </button>

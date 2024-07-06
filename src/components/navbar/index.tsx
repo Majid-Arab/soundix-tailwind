@@ -6,7 +6,7 @@ import Popup from "./Popup";
 function Index() {
   return (
     <nav>
-      <div className="mx-auto max-w-7xl px-2">
+      <div className="mx-auto max-w-7xl  px-2">
         <div className="relative flex h-16 items-center justify-between">
           <HeadphoneTitle />
           <Popup />
