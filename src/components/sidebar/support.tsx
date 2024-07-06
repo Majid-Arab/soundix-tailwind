@@ -15,13 +15,13 @@ function Support() {
             />
           </div>
         </div>
-        <span className="text-[#016173] font-md text-xl">Need Help</span>
-        <p className="text-center  text-sm">
+        <span className="text-[#016173] font-md text-xl xl:text-lg">Need Help</span>
+        <p className="text-center  text-sm xl:text-xs">
           About Account Management Ordering & Payment Refund And FAQ
         </p>
         <button
           type="button"
-          className="bg-white border-white border-2 relative rounded-lg px-4 py-2  text-[#047979] text-sm font-semibold hover:border-2 hover:border-[#047979]  focus:outline-none focus:ring-2 focus:ring-[#047979] focus:ring-offset-2"
+          className="bg-white border-white border-2 relative rounded-lg px-4 py-2 bg-[#EBFCFF] text-[#047979] text-sm font-semibold hover:border-2 hover:border-[#047979]  focus:outline-none focus:ring-2 focus:ring-[#047979] focus:ring-offset-2"
         >
           Customer Service
         </button>
