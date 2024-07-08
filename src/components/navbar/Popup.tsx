@@ -7,21 +7,21 @@ function Popup() {
   return (
     <div className="absolute inset-y-0 right-0 flex items-center justify-between gap-5 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
       <Search />
-      <button
-        type="button"
-        className="relative rounded-md bg-[#D8F9FF] p-3 text-[#047979] hover:text-white hover:bg-[#047979]"
-      >
-        <IconMail />
-      </button>
 
-      <button
-        type="button"
-        className="relative rounded-md bg-[#D8F9FF] p-3 text-[#047979] hover:text-white hover:bg-[#047979]"
-      >
-        <IconBell />
-      </button>
+      <div className="relative hidden lg:flex gap-5">
+        <button
+          type="button"
+          className="relative rounded-md bg-[#D8F9FF] p-3 text-[#047979] hover:text-white hover:bg-[#047979]"
+        >
+          <IconMail />
+        </button>
 
-      <div className="relative">
+        <button
+          type="button"
+          className="relative rounded-md bg-[#D8F9FF] p-3 text-[#047979] hover:text-white hover:bg-[#047979]"
+        >
+          <IconBell />
+        </button>
         <div>
           <button
             type="button"
