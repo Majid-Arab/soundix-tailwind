@@ -8,7 +8,7 @@ import ProductCount from "./productCount";
 
 function ProducDetail() {
   return (
-    <div className="flex justify-between items-center gap-5 h-[400px] p-4 rounded-2xl shadow-2xl">
+    <div className="flex justify-between items-center gap-5 h-[400px] lg:w-[500px] lg:flex-col lg:h-auto md:w-[500px] md:flex-col md:h-auto p-4 rounded-2xl shadow-2xl md:mt-4">
       <div className="px-5 w-60">
         <span>
           <Image src={Product} alt="" width={500} height={500} />

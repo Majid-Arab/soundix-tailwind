@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    // <html lang="en">
       <body className="h-screen flex font-sans">
         {/* <!-- Sidebar --> */}
         <div className="h-full w-72 xl:w-64 text-white flex-shrink-0 py-3">
@@ -36,12 +36,13 @@ export default function RootLayout({
             <main className="flex-grow">{children}</main>
 
             {/* <!-- Aside --> */}
-            <aside className="h-full w-96 flex-shrink-0">
+            <aside className="h-full w-96 xl:w-[350px] flex-shrink-0">
               <AsideBar />
             </aside>
           </div>
         </div>
       </body>
-    </html>
+    // </html>
   );
 }
+ 
