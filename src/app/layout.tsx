@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/navbar/index";
 import Sidebar from "@/components/sidebar/index";
 import AsideBar from "@/components/asidebar/index";
+import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,7 +34,9 @@ export default function RootLayout({
 
           <div className="flex flex-grow">
             {/* <!-- Main Content --> */}
-            <main className="flex-grow">{children}</main>
+            <main className="flex-grow">{children}
+              <Footer />
+            </main>
 
             {/* <!-- Aside --> */}
             <aside className="h-full w-96 xl:w-[350px] flex-shrink-0">
