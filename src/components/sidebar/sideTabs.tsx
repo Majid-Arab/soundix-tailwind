@@ -24,8 +24,8 @@ function SideTabs() {
             )}
             <a
               href="#"
-              className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent pr-6 my-3 transition-all duration-300"
-              style={{ width: "calc(100% - 1rem)" }} // Adjust width here
+              className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent pr-6 my-2 transition-all duration-300"
+              style={{ width: "calc(100% - 1rem)" }}
             >
               <span className="inline-flex justify-center items-center ml-5">
                 {item.icon}

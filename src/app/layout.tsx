@@ -28,19 +28,18 @@ export default function RootLayout({
 
         <div className="flex flex-col w-full gap-3">
           {/* <!-- Header --> */}
-          <header className="h-16 w-full py-3">
-            <Navbar />
-          </header>
+          <header className="h-16 w-full py-3">{/* <Navbar /> */}</header>
 
           <div className="flex flex-grow">
             {/* <!-- Main Content --> */}
-            <main className="flex-grow">{children}
-              <Footer />
+            <main className="flex-grow">
+              {/* {children} */}
+              {/* <Footer /> */}
             </main>
 
             {/* <!-- Aside --> */}
             <aside className="h-full w-96 xl:w-[350px] flex-shrink-0">
-              <AsideBar />
+              {/* <AsideBar /> */}
             </aside>
           </div>
         </div>

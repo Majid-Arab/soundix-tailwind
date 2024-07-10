@@ -3,7 +3,7 @@ import React from "react";
 
 function Support() {
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center ">
       <div className="flex justify-around items-center flex-col gap-2 p-4 m-5 bg-[#A1D2FF] text-[#047979] rounded-2xl">
         <div>
           <div className="bg-[#00E0C6] border-white border-4 relative rounded-full p-2 text-white font-semibold">
@@ -15,7 +15,9 @@ function Support() {
             />
           </div>
         </div>
-        <span className="text-[#016173] font-md text-xl xl:text-lg">Need Help</span>
+        <span className="text-[#016173] font-md text-xl xl:text-lg">
+          Need Help
+        </span>
         <p className="text-center  text-sm xl:text-xs">
           About Account Management Ordering & Payment Refund And FAQ
         </p>
