@@ -1,30 +1,28 @@
 "use client";
 
 import React, { useState } from "react";
-import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
-import AsideBar from "./index";
+import { IconChevronRight, IconChevronLeft } from "@tabler/icons-react";
+import FeaturedCard from "./featuredCard";
+import ProductTable from "./productTable";
+import TableHead from "./tableHead";
 
-function ToggleBtn() {
-  const [openedAside, setOpenedAside] = useState(true);
+function ToggleAsidebar() {
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
 
-  const toggleAside = () => {
-    setOpenedAside((prev) => !prev);
+  const toggleAsidebar = () => {
+    setSidebarOpen((prev) => !prev);
   };
+
   return (
-    <div className="relative flex flex-1 h-full">
-      <button
-        className="absolute top-1/2 left-0 transform -translate-y-1/2 lg:-left-5 sm:left-0"
-        onClick={toggleAside}
-      >
-        {openedAside ? (
-          <IconChevronLeft className="w-full h-full" stroke={1.5} />
-        ) : (
-          <IconChevronRight className="w-full h-full" stroke={1.5} />
-        )}
+    <div className="relative">
+      <button className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+        <IconChevronRight
+          className="h-6 w-6 text-white"
+          onClick={toggleAsidebar}
+        />
       </button>
-      <div className="flex-1">{openedAside && <AsideBar />}</div>
     </div>
   );
 }
 
-export default ToggleBtn;
+export default ToggleAsidebar;

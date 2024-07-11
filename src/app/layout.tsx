@@ -5,6 +5,7 @@ import Navbar from "@/components/navbar/index";
 import Sidebar from "@/components/sidebar/index";
 import AsideBar from "@/components/asidebar/index";
 import Footer from "@/components/footer";
+import { IconChevronRight } from "@tabler/icons-react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -38,7 +39,7 @@ export default function RootLayout({
 
             {/* <!-- Aside --> */}
             <aside className="h-full w-96 xl:w-[350px] flex-shrink-0">
-              {/* <AsideBar /> */}
+              <AsideBar />
             </aside>
           </div>
         </div>
