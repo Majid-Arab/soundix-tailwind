@@ -6,12 +6,18 @@ import ToggleSidebar from "./toggleSidebar";
 function Index() {
   return (
     <div>
-      <div className="flex">
-        <Header />
-        <ToggleSidebar />
+      <div className="flex items-center">
+        <div className="hidden sm:block lg:block">
+          <Header />
+        </div>
+        <div className="block md:hidden lg:hidden">
+          <ToggleSidebar />
+        </div>
       </div>
-      <SideTabs />
-      <Support />
+      <div className="hidden sm:block lg:block">
+        <SideTabs />
+        <Support />
+      </div>
     </div>
   );
 }

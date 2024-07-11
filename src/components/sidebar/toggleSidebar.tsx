@@ -29,7 +29,7 @@ function ToggleSidebar() {
         {isSidebarOpen && (
           <div className="fixed inset-0 bg-gray-800 bg-opacity-50 z-40">
             <div className="fixed inset-y-0 left-0 z-50 w-64 bg-white p-4">
-              <div className="hidden">
+              <div className="">
                 <Header />
                 <SideTabs />
                 <Support />
