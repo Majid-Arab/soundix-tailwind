@@ -15,7 +15,7 @@ const tabItems = [
 
 function SideTabs() {
   return (
-    <nav className="pt-6">
+    <nav className="pt-2">
       <ul>
         {tabItems.map((item, index) => (
           <li key={index} className="relative flex items-center">
@@ -24,13 +24,13 @@ function SideTabs() {
             )}
             <a
               href="#"
-              className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent pr-6 my-2 transition-all duration-300"
+              className="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent pr-6 sm:my-2 transition-all duration-300"
               style={{ width: "calc(100% - 1rem)" }}
             >
-              <span className="inline-flex justify-center items-center ml-5">
+              <span className="inline-flex justify-center items-center ml-5 text-lg sm:text-xl">
                 {item.icon}
               </span>
-              <span className="ml-6 text-md tracking-wide truncate font-semibold">
+              <span className="ml-6 text-sm sm:text-md lg:text-lg tracking-wide truncate font-semibold">
                 {item.label}
               </span>
             </a>

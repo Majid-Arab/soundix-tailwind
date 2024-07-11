@@ -5,7 +5,7 @@ import ToggleSidebar from "./toggleSidebar";
 
 function Index() {
   return (
-    <div>
+    <>
       <div className="flex items-center">
         <div className="hidden sm:block lg:block">
           <Header />
@@ -18,7 +18,7 @@ function Index() {
         <SideTabs />
         <Support />
       </div>
-    </div>
+    </>
   );
 }
 

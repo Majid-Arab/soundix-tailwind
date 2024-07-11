@@ -5,7 +5,7 @@ import Logo from "../../../public/logo.png";
 
 function Header() {
   return (
-    <div className="relative flex items-center">
+    <div className="relative flex items-center py-3">
       <div className=" flex justify-start items-center black gap-3 text-black">
         <div className="relative rounded-md bg-[#D8F9FF] p-2 text-[#047979] focus:outline-none focus:ring-2 focus:ring-[#047979] focus:ring-offset-2 ml-5">
           <Image
