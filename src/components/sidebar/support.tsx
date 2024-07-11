@@ -3,7 +3,7 @@ import React from "react";
 
 function Support() {
   return (
-    <div className="flex justify-center items-center ">
+    <div className="flex justify-center items-center max-w-72">
       <div className="flex justify-around items-center flex-col gap-2 p-4 m-5 bg-[#A1D2FF] text-[#047979] rounded-2xl">
         <div>
           <div className="bg-[#00E0C6] border-white border-4 relative rounded-full p-2 text-white font-semibold">

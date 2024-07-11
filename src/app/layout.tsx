@@ -22,20 +22,19 @@ export default function RootLayout({
     <html lang="en">
       <body className="h-screen flex font-sans">
         {/* <!-- Sidebar --> */}
-        <div className="h-full w-72 xl:w-64 text-white flex-shrink-0 py-3">
+        <div className="h-full lg:w-72">
           <Sidebar />
         </div>
 
         <div className="flex flex-col w-full gap-3">
           {/* <!-- Header --> */}
-          <header className="h-16 w-full py-3">{/* <Navbar /> */}</header>
+          <nav className="h-16 w-full py-3">
+            <Navbar />
+          </nav>
 
-          <div className="flex flex-grow">
+          <div className="flex">
             {/* <!-- Main Content --> */}
-            <main className="flex-grow">
-              {/* {children} */}
-              {/* <Footer /> */}
-            </main>
+            <main className="flex-grow">{/* {children} */}</main>
 
             {/* <!-- Aside --> */}
             <aside className="h-full w-96 xl:w-[350px] flex-shrink-0">
@@ -43,6 +42,11 @@ export default function RootLayout({
             </aside>
           </div>
         </div>
+
+        {/* <!-- Footer --> */}
+        <footer className="absolute w-full bottom-0">
+          <Footer />
+        </footer>
       </body>
     </html>
   );
