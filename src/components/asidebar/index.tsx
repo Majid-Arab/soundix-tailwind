@@ -4,7 +4,6 @@ import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 import FeaturedCard from "./featuredCard";
 import ProductTable from "./productTable";
 import TableHead from "./tableHead";
-import ToggleAsidebar from "./toggleBtn";
 
 function AsideBar() {
   const [drawerOpen, setDrawerOpen] = useState(true);
