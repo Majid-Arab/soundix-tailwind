@@ -34,7 +34,7 @@ export default function RootLayout({
 
           <div className="flex">
             {/* <!-- Main Content --> */}
-            <main className="flex-grow">{/* {children} */}</main>
+            <main className="flex-grow">{children}</main>
 
             {/* <!-- Aside --> */}
             <aside className="h-full w-96 xl:w-[350px] flex-shrink-0">
