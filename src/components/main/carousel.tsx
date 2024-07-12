@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Product1 from "../../../public/headphone.png";
 import Product2 from "../../../public/headphone1.png";
-import Product3 from "../../../public/headphone.png";
 import {
   IconStarFilled,
   IconPlus,
@@ -43,14 +42,6 @@ const slides = [
     price: 333.35,
     rating: 0,
   },
-  {
-    id: 5,
-    src: Product2,
-    alt: "Slide 1",
-    title: "original bests solo pro",
-    price: 333.35,
-    rating: 0,
-  },
 ];
 
 function Carousel() {
@@ -63,22 +54,19 @@ function Carousel() {
   const handleNext = () => {
     setActiveSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
   };
+
   return (
-    <div className="relative overflow-hidden p-4">
+    <div className="relative overflow-hidden p-4 md:w-[500px] lg:w-[1000px]">
       <div
         className="flex gap-6 transition-transform duration-700"
         style={{
-          width: `calc(100% * ${slides.length / 3.5})`,
           transform: `translateX(-${(100 / slides.length) * activeSlide}%)`,
         }}
       >
         {slides.map((slide, index) => (
           <div
             key={index}
-            className="flex flex-col justify-between items-center gap-6 p-5 xl:gap-0 xl:p-3 flex-shrink-0 bg-white rounded-2xl shadow-2xl"
-            style={{
-              width: `calc(100% / 4.1)`,
-            }}
+            className="flex flex-col justify-between items-center gap-6 p-5 xl:gap-0 xl:p-3 flex-shrink-0 bg-white rounded-2xl shadow-2xl w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4"
           >
             <Image
               src={slide.src}
@@ -110,7 +98,7 @@ function Carousel() {
         className="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
         onClick={handlePrev}
       >
-        <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white shadow-gray shadow-lg  group-hover:bg-white/50 dark:group-hover:bg-gray-800/60">
+        <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white shadow-gray shadow-lg group-hover:bg-white/50 dark:group-hover:bg-gray-800/60">
           <IconChevronLeft
             className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
             stroke={3}
@@ -120,15 +108,14 @@ function Carousel() {
       </button>
       <button
         type="button"
-        className="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none "
+        className="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
         onClick={handleNext}
       >
-        <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white shadow-gray shadow-lg  group-hover:bg-white dark:group-hover:bg-gray-400/60">
+        <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white shadow-gray shadow-lg group-hover:bg-white dark:group-hover:bg-gray-400/60">
           <IconChevronRight
             className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
             stroke={3}
           />
-
           <span className="sr-only">Next</span>
         </span>
       </button>
