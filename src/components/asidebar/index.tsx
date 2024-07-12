@@ -1,18 +1,47 @@
-import React from "react";
-import { IconChevronRight } from "@tabler/icons-react";
+"use client";
+import React, { useState } from "react";
+import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
 import FeaturedCard from "./featuredCard";
 import ProductTable from "./productTable";
 import TableHead from "./tableHead";
 import ToggleAsidebar from "./toggleBtn";
 
 function AsideBar() {
+  const [drawerOpen, setDrawerOpen] = useState(true);
+
+  const toggleDrawer = () => {
+    setDrawerOpen((prev) => !prev);
+  };
+
   return (
-    <div className="flex flex-col relative">
-      <FeaturedCard />
-      <TableHead />
-      <ProductTable />
-      <div className="block md:hidden lg:hidden">
-        <ToggleAsidebar />
+    <div className="relative">
+      <div
+        className={`top-0 right-0 h-full w-96 xl:w-[350px] text-white transform transition-transform duration-300 ${
+          drawerOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <button
+          className="absolute -left-6 top-1/2 transform lg:hidden bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 z-50 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+          onClick={toggleDrawer}
+        >
+          {drawerOpen ? (
+            <IconChevronRight
+              style={{ width: "100%", height: "100%" }}
+              stroke={1.5}
+            />
+          ) : (
+            <IconChevronLeft
+              style={{ width: "100%", height: "100%" }}
+              stroke={1.5}
+            />
+          )}
+        </button>
+
+        <div className="p-4">
+          <FeaturedCard />
+          <TableHead />
+          <ProductTable />
+        </div>
       </div>
     </div>
   );

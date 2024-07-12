@@ -5,7 +5,6 @@ import Navbar from "@/components/navbar/index";
 import Sidebar from "@/components/sidebar/index";
 import AsideBar from "@/components/asidebar/index";
 import Footer from "@/components/footer";
-import { IconChevronRight } from "@tabler/icons-react";
 
 const inter = Inter({ subsets: ["latin"] });
 
