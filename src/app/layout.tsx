@@ -34,7 +34,7 @@ export default function RootLayout({
 
           <div className="flex">
             {/* <!-- Main Content --> */}
-            <main className="flex-grow">{children}</main>
+            <main className="flex-grow pt-5">{children}</main>
 
             {/* <!-- Aside --> */}
             <aside className="h-full w-96 xl:w-[350px] flex-shrink-0">
@@ -44,7 +44,7 @@ export default function RootLayout({
         </div>
 
         {/* <!-- Footer --> */}
-        <footer className="absolute w-full bottom-0">
+        <footer className="fixed w-full bottom-0">
           <Footer />
         </footer>
       </body>

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import Slide1 from "../../../public/headphone.png";
-import Slide2 from "../../../public/headphone1.png";
+import Product1 from "../../../public/headphone.png";
+import Product2 from "../../../public/headphone1.png";
+import Product3 from "../../../public/headphone.png";
 import {
   IconStarFilled,
   IconPlus,
@@ -11,28 +12,40 @@ import {
 
 const slides = [
   {
-    src: Slide2,
-    alt: "Slide1 1",
+    id: 1,
+    src: Product2,
+    alt: "Product1 1",
     title: "original bests solo pro",
     price: 333.35,
     rating: 0,
   },
   {
-    src: Slide1,
+    id: 2,
+    src: Product1,
     alt: "Slide 1",
     title: "original bests solo pro",
     price: 333.35,
     rating: 0,
   },
   {
-    src: Slide2,
+    id: 3,
+    src: Product2,
     alt: "Slide 1",
     title: "original bests solo pro",
     price: 333.35,
     rating: 0,
   },
   {
-    src: Slide1,
+    id: 4,
+    src: Product1,
+    alt: "Slide 1",
+    title: "original bests solo pro",
+    price: 333.35,
+    rating: 0,
+  },
+  {
+    id: 5,
+    src: Product2,
     alt: "Slide 1",
     title: "original bests solo pro",
     price: 333.35,

@@ -4,7 +4,7 @@ import Avatar from "../../public/avatar.png";
 
 function Footer() {
   return (
-    <div className="flex justify-around items-center sm:block md:hidden lg:hidden">
+    <div className="flex justify-around items-center bg-white border-t-2 border-black h-20 sm:block md:hidden lg:hidden">
       <button
         type="button"
         className="relative rounded-md bg-[#D8F9FF] p-3 text-[#047979] hover:text-white hover:bg-[#047979]"
