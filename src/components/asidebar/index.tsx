@@ -15,7 +15,7 @@ function AsideBar() {
   return (
     <div className="relative">
       <div
-        className={`top-0 right-0 h-full w-96 xl:w-[350px] text-white transform transition-transform duration-300 ${
+        className={`top-0 right-0 text-white transform transition-transform duration-300 ${
           drawerOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -36,7 +36,7 @@ function AsideBar() {
           )}
         </button>
 
-        <div className="p-4">
+        <div>
           <FeaturedCard />
           <TableHead />
           <ProductTable />
