@@ -1,9 +1,13 @@
 import React, { useState } from "react";
-import Image from "next/image"
-import Product from "../../../public/headphone.png";
+import Image from "next/image";
 import Slide1 from "../../../public/headphone.png";
 import Slide2 from "../../../public/headphone1.png";
-import { IconStarFilled, IconPlus, IconChevronLeft, IconChevronRight } from "@tabler/icons-react";
+import {
+  IconStarFilled,
+  IconPlus,
+  IconChevronLeft,
+  IconChevronRight,
+} from "@tabler/icons-react";
 
 const slides = [
   {
@@ -69,7 +73,9 @@ function Carousel() {
               alt={slide.alt}
             />
             <div>
-              <div className="font-bold capitalize xl:text-xs">{slide.title}</div>
+              <div className="font-bold capitalize xl:text-xs">
+                {slide.title}
+              </div>
               <div className="text-sm font-medium py-1 xl:text-xs">
                 Price ${slide.price}
               </div>
@@ -78,14 +84,14 @@ function Carousel() {
                   <IconStarFilled color="#00E0C6" size={18} /> {slide.rating}
                 </span>
                 <div className="bg-[#009393] relative rounded-full p-1 text-white font-semibold">
-                  <IconPlus stroke={2} color="white" size={18}/>
+                  <IconPlus stroke={2} color="white" size={18} />
                 </div>
               </div>
             </div>
           </div>
         ))}
       </div>
-      
+
       <button
         type="button"
         className="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"

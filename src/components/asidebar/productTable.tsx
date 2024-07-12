@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import { IconArrowRight } from "@tabler/icons-react";
 import Headphone from "../../../public/headphone1.png";
 
 const productItems = [
