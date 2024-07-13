@@ -4,6 +4,7 @@ import ProductDetail from "@/components/main/ProductDetail";
 import Carousel from "@/components/main/carousel";
 import { ProductProp } from "@/components/main/carousel";
 import headphone from "../../public/headphone.png";
+import Card from "@/components/main/card";
 
 const defaultProduct: ProductProp = {
   id: 1,
@@ -26,7 +27,7 @@ function Home() {
 
       <Carousel setSelectedProduct={setSelectedProduct} />
 
-      {/* <Card /> */}
+      <Card />
     </div>
   );
 }
