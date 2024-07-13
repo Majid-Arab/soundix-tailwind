@@ -1,16 +1,30 @@
 "use client";
-
-import React from "react";
+import React, { useState } from "react";
 import ProductDetail from "@/components/main/ProductDetail";
 import Carousel from "@/components/main/carousel";
-import Card from "@/components/main/card";
+import { ProductProp } from "@/components/main/carousel";
+import headphone from "../../public/headphone.png";
 
+const defaultProduct: ProductProp = {
+  id: 1,
+  src: headphone,
+  alt: "Product1 1",
+  title: "Original Bests Solo Pro",
+  description:
+    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem odio ullam officia eveniet nesciunt minima laboriosam.",
+  price: 333.35,
+  rating: 0,
+};
 function Home() {
+  const [selectedProduct, setSelectedProduct] = useState<ProductProp | null>(
+    defaultProduct
+  );
+
   return (
     <div className="flex flex-col items-center gap-10 ">
-      <ProductDetail />
+      <ProductDetail product={selectedProduct} />
 
-      <Carousel />
+      <Carousel setSelectedProduct={setSelectedProduct} />
 
       {/* <Card /> */}
     </div>

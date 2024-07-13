@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Product1 from "../../../public/headphone.png";
 import Product2 from "../../../public/headphone1.png";
 import {
@@ -9,12 +9,24 @@ import {
   IconChevronRight,
 } from "@tabler/icons-react";
 
-const slides = [
+export type ProductProp = {
+  id: number;
+  src: StaticImageData;
+  alt: string;
+  title: string;
+  description: string;
+  price: number;
+  rating: number;
+};
+
+const slides: ProductProp[] = [
   {
     id: 1,
     src: Product2,
     alt: "Product1 1",
-    title: "original bests solo pro",
+    title: "Original Bests Solo Pro",
+    description:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem odio ullam officia eveniet nesciunt minima laboriosam.",
     price: 333.35,
     rating: 0,
   },
@@ -22,7 +34,9 @@ const slides = [
     id: 2,
     src: Product1,
     alt: "Slide 1",
-    title: "original bests solo pro",
+    title: "Original Bests Solo Pro",
+    description:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem odio ullam officia eveniet nesciunt minima laboriosam.",
     price: 333.35,
     rating: 0,
   },
@@ -30,7 +44,9 @@ const slides = [
     id: 3,
     src: Product2,
     alt: "Slide 1",
-    title: "original bests solo pro",
+    title: "Original Bests Solo Pro",
+    description:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem odio ullam officia eveniet nesciunt minima laboriosam.",
     price: 333.35,
     rating: 0,
   },
@@ -38,13 +54,19 @@ const slides = [
     id: 4,
     src: Product1,
     alt: "Slide 1",
-    title: "original bests solo pro",
+    title: "Original Bests Solo Pro",
+    description:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem odio ullam officia eveniet nesciunt minima laboriosam.",
     price: 333.35,
     rating: 0,
   },
 ];
 
-function Carousel() {
+interface CarouselProps {
+  setSelectedProduct: (product: ProductProp) => void;
+}
+
+function Carousel({ setSelectedProduct }: CarouselProps) {
   const [activeSlide, setActiveSlide] = useState(0);
 
   const handlePrev = () => {
@@ -55,6 +77,11 @@ function Carousel() {
     setActiveSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
   };
 
+  const handleProductClick = (product: ProductProp) => {
+    setSelectedProduct(product);
+    console.log(product);
+  };
+
   return (
     <div className="relative overflow-hidden p-4 md:w-[500px] lg:w-[1000px]">
       <div
@@ -63,14 +90,15 @@ function Carousel() {
           transform: `translateX(-${(100 / slides.length) * activeSlide}%)`,
         }}
       >
-        {slides.map((slide, index) => (
-          <div
-            key={index}
+        {slides.map((slide) => (
+          <button
+            key={slide.id}
             className="flex flex-col justify-between items-center gap-6 p-5 xl:gap-0 xl:p-3 flex-shrink-0 bg-white rounded-2xl shadow-2xl w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4"
+            onClick={() => handleProductClick(slide)}
           >
             <Image
               src={slide.src}
-              className="w-40 h-40 object-contain xl:w-24 xl:h-2w-24"
+              className="w-40 h-40 object-contain xl:w-24 "
               alt={slide.alt}
             />
             <div>
@@ -89,7 +117,7 @@ function Carousel() {
                 </div>
               </div>
             </div>
-          </div>
+          </button>
         ))}
       </div>
 
