@@ -1,7 +1,14 @@
+import { ProductProp } from "@/app/type";
+import useCartStore from "@/store/cart";
 import { IconHeartFilled } from "@tabler/icons-react";
 import React from "react";
 
-function button() {
+type Prop = {
+  product: ProductProp;
+};
+
+function Button({ product }: Prop) {
+  const addToCart = useCartStore((state) => state.addToCart);
   return (
     <div className="flex justify-start items-center gap-2 md:gap-5 pt-5">
       <button
@@ -14,6 +21,7 @@ function button() {
       </button>
       <button
         type="button"
+        onClick={() => addToCart(product)}
         className="relative text-md md:text-2xl rounded-xl p-2 md:p-3 lg:p-5 text-[#047979] border-2 border-[#047979] hover:bg-[#047979] hover:text-white "
       >
         Add to cart
@@ -28,4 +36,4 @@ function button() {
   );
 }
 
-export default button;
+export default Button;

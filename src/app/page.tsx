@@ -2,9 +2,9 @@
 import React, { useState } from "react";
 import ProductDetail from "@/components/main/ProductDetail";
 import Carousel from "@/components/main/carousel";
-import { ProductProp } from "@/components/main/carousel";
 import headphone from "../../public/headphone.png";
 import Card from "@/components/main/card";
+import { ProductProp } from "./type";
 
 const defaultProduct: ProductProp = {
   id: 1,

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Rating from "./rating";
 import Button from "./button";
 import ProductCount from "./productCount";
-import { ProductProp } from "./carousel";
+import { ProductProp } from "@/app/type";
 
 interface ProductDetailProps {
   product: ProductProp | null;
@@ -50,7 +50,7 @@ function ProductDetail({ product }: ProductDetailProps) {
           <ProductCount />
         </div>
 
-        <Button />
+        <Button product={product} />
       </div>
     </div>
   );

@@ -8,16 +8,8 @@ import {
   IconChevronLeft,
   IconChevronRight,
 } from "@tabler/icons-react";
-
-export type ProductProp = {
-  id: number;
-  src: StaticImageData;
-  alt: string;
-  title: string;
-  description: string;
-  price: number;
-  rating: number;
-};
+import { ProductProp } from "@/app/type";
+import useCartStore from "@/store/cart";
 
 const slides: ProductProp[] = [
   {
@@ -81,6 +73,7 @@ function Carousel({ setSelectedProduct }: CarouselProps) {
     setSelectedProduct(product);
     console.log(product);
   };
+  const addToCart = useCartStore((state) => state.addToCart);
 
   return (
     <div className="relative overflow-hidden p-4 md:w-[500px] lg:w-[1000px]">
@@ -91,7 +84,7 @@ function Carousel({ setSelectedProduct }: CarouselProps) {
         }}
       >
         {slides.map((slide) => (
-          <button
+          <a
             key={slide.id}
             className="flex flex-col justify-between items-center gap-6 p-5 xl:gap-0 xl:p-3 flex-shrink-0 bg-white rounded-2xl shadow-2xl w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4"
             onClick={() => handleProductClick(slide)}
@@ -112,12 +105,15 @@ function Carousel({ setSelectedProduct }: CarouselProps) {
                 <span className="flex items-start text-[#00E0C6] gap-1 pt-2">
                   <IconStarFilled color="#00E0C6" size={18} /> {slide.rating}
                 </span>
-                <div className="bg-[#009393] relative rounded-full p-1 text-white font-semibold">
+                <button
+                  onClick={() => addToCart(slide)}
+                  className="bg-[#009393] relative rounded-full p-1 text-white font-semibold focus:border-2 focus:border-[#009393]"
+                >
                   <IconPlus stroke={2} color="white" size={18} />
-                </div>
+                </button>
               </div>
             </div>
-          </button>
+          </a>
         ))}
       </div>
 
