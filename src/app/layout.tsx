@@ -20,24 +20,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="h-screen flex font-sans">
+      <body className="h-screen max-w-[100%] flex font-sans">
         {/* <!-- Sidebar --> */}
         <div className="h-full lg:w-72">
           <Sidebar />
         </div>
 
-        <div className="flex flex-col w-full gap-3">
+        <div className="flex flex-col w-full gap-3 flex-grow">
           {/* <!-- Header --> */}
           <nav className="h-16 w-full py-3">
             <Navbar />
           </nav>
 
-          <div className="flex">
+          <div className="block md:flex">
             {/* <!-- Main Content --> */}
-            <main className="flex-grow pt-5">{children}</main>
+            <main className="pt-5">
+              {children}
+            </main>
 
             {/* <!-- Aside --> */}
-            <aside className="h-full w-96 xl:w-[350px] flex-shrink-0">
+            <aside className="h-full lg:hidden xl:w-[350px] flex-shrink-0">
               <AsideBar />
             </aside>
           </div>

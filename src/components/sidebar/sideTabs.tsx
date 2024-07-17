@@ -24,7 +24,7 @@ function SideTabs() {
     {
       label: "Cart",
       icon: <IconShoppingCart stroke={2} />,
-      link: "/cart", // Ensure this path matches your actual Next.js route structure
+      link: "/cart",
       badge: (
         <span className="inline-flex items-center rounded-full bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
           {cart.length}
@@ -47,9 +47,6 @@ function SideTabs() {
       <ul>
         {tabItems.map((item, index) => (
           <li key={index} className="relative flex items-center">
-            {index === 0 && (
-              <span className="absolute left-0 w-4 h-6 bg-[#009292] rounded-md -ml-2"></span>
-            )}
             <Link
               href={item.link}
               passHref

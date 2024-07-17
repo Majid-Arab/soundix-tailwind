@@ -22,7 +22,6 @@ function Search() {
       </span>
       <input
         type="search"
-        name="q"
         className={`py-2 text-xl text-white shadow-lg rounded-md pl-10 focus:outline-none focus:bg-white focus:text-gray-900 ${
           isSearchOpen ? "block" : "hidden lg:block"
         }`}

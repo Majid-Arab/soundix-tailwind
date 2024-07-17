@@ -10,9 +10,6 @@ function Index() {
         <div className="hidden sm:block lg:block">
           <Header />
         </div>
-        <div className="block md:hidden lg:hidden">
-          <ToggleSidebar />
-        </div>
       </div>
       <div className="hidden sm:block lg:block">
         <SideTabs />

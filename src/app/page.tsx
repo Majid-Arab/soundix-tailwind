@@ -22,12 +22,12 @@ function Home() {
   );
 
   return (
-    <div className="flex flex-col items-center gap-10 ">
+    <div className="flex flex-col items-center gap-10">
       <ProductDetail product={selectedProduct} />
 
-      <Carousel setSelectedProduct={setSelectedProduct} />
+      {/* <Carousel setSelectedProduct={setSelectedProduct} /> */}
 
-      <Card />
+      {/* <Card /> */}
     </div>
   );
 }

@@ -76,7 +76,7 @@ function Carousel({ setSelectedProduct }: CarouselProps) {
   const addToCart = useCartStore((state) => state.addToCart);
 
   return (
-    <div className="relative overflow-hidden p-4 md:w-[500px] lg:w-[1000px]">
+    <div className="relative overflow-hidden p-4">
       <div
         className="flex gap-6 transition-transform duration-700"
         style={{
