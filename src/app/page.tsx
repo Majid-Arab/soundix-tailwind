@@ -25,7 +25,7 @@ function Home() {
     <div className="flex flex-col items-center gap-10">
       <ProductDetail product={selectedProduct} />
 
-      {/* <Carousel setSelectedProduct={setSelectedProduct} /> */}
+      <Carousel setSelectedProduct={setSelectedProduct} />
 
       {/* <Card /> */}
     </div>
