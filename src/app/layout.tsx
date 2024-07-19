@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="h-screen max-w-[100%] flex font-sans">
+      <body className="h-screen max-w-[100%] flex font-sans bg-white text-black">
         {/* <!-- Sidebar --> */}
         <div className="h-full lg:w-72">
           <Sidebar />
@@ -34,12 +34,12 @@ export default function RootLayout({
 
           <div className="block md:flex">
             {/* <!-- Main Content --> */}
-            <main className="pt-5">
+            <main className="pt-5 w-full">
               {children}
             </main>
 
             {/* <!-- Aside --> */}
-            <aside className="h-full lg:hidden xl:w-[350px] flex-shrink-0">
+            <aside className="h-full xl:w-[350px] flex-shrink-0">
               <AsideBar />
             </aside>
           </div>
