@@ -8,4 +8,5 @@ export type ProductProp = {
   description: string;
   price: number;
   rating: number;
+  count: number;
 };

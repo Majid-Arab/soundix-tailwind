@@ -1,6 +1,9 @@
+"use client"
+
 import { useState } from "react";
 import useCartStore from "../../store/cart";
 import Image from "next/image";
+import ProductCount from "@/components/main/productCount";
 
 function Cart() {
   const cart = useCartStore((state) => state.cart);
@@ -47,6 +50,9 @@ function Cart() {
         <td className="p-4">{product.description}</td>
         <td className="p-4">{product.price}</td>
         <td className="p-4">
+          <ProductCount productId={product.count} />
+        </td>
+        <td className="p-4">
           <button
             onClick={() => removeFromCart(product.id)}
             className="px-4 py-2 text-xs font-medium text-white uppercase bg-red-500 rounded hover:bg-red-600"
@@ -74,6 +80,7 @@ function Cart() {
             <th className="p-4 text-left">Title</th>
             <th className="p-4 text-left">Description</th>
             <th className="p-4 text-left">Price</th>
+            <th className="p-4 text-left">Quantity</th>
             <th className="p-4 text-left">Action</th>
           </tr>
         </thead>
