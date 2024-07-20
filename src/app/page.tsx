@@ -15,6 +15,7 @@ const defaultProduct: ProductProp = {
     "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem odio ullam officia eveniet nesciunt minima laboriosam.",
   price: 333.35,
   rating: 0,
+  count: 1,
 };
 function Home() {
   const [selectedProduct, setSelectedProduct] = useState<ProductProp | null>(

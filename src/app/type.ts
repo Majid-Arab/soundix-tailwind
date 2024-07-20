@@ -2,7 +2,7 @@ import Image, { StaticImageData } from "next/image";
 
 export type ProductProp = {
   id: number;
-  src: StaticImageData;
+  src: string | StaticImageData;
   alt: string;
   title: string;
   description: string;

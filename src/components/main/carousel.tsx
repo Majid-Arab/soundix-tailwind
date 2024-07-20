@@ -21,6 +21,7 @@ const slides: ProductProp[] = [
       "Experience high-quality sound with our wireless headphones. Enjoy your music without the hassle of wires.",
     price: 199.99,
     rating: 4.5,
+    count: 1,
   },
   {
     id: 2,
@@ -31,6 +32,7 @@ const slides: ProductProp[] = [
       "Block out the noise and immerse yourself in your music with our noise-cancelling headphones.",
     price: 299.99,
     rating: 4.7,
+    count: 1,
   },
   {
     id: 3,
@@ -41,6 +43,7 @@ const slides: ProductProp[] = [
       "Perfect for your workout sessions. These sports earbuds are sweat-resistant and provide a secure fit.",
     price: 89.99,
     rating: 4.2,
+    count: 1,
   },
   {
     id: 4,
@@ -51,6 +54,7 @@ const slides: ProductProp[] = [
       "Comfortable over-ear headphones with exceptional sound quality. Ideal for long listening sessions.",
     price: 249.99,
     rating: 4.6,
+    count: 1,
   },
 ];
 

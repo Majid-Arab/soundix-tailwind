@@ -13,7 +13,7 @@ function ProductDetail({ product }: ProductDetailProps) {
   if (!product) return null;
 
   return (
-    <div className="w-auto m-2 flex flex-col lg:flex-row items-center justify-center gap-5 p-4 rounded-2xl shadow-2xl h-auto">
+    <div className="w-auto m-2 flex flex-col lg:flex-row items-center justify-center gap-5 p-4 rounded-2xl shadow-2xl">
       <div className="w-40 md:w-auto px-5">
         <Image
           src={product.src}
