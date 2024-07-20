@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import Product1 from "../../../public/headphone.png";
 import Product2 from "../../../public/headphone1.png";
 import {
@@ -76,9 +76,9 @@ function Carousel({ setSelectedProduct }: CarouselProps) {
   const addToCart = useCartStore((state) => state.addToCart);
 
   return (
-    <div className="relative overflow-hidden p-4">
+    <div className="relative overflow-hidden p-4 w-full">
       <div
-        className="flex gap-6 transition-transform duration-700"
+        className="flex gap-6 transition-transform duration-700 overflow-x-hidden"
         style={{
           transform: `translateX(-${(100 / slides.length) * activeSlide}%)`,
         }}
@@ -86,19 +86,23 @@ function Carousel({ setSelectedProduct }: CarouselProps) {
         {slides.map((slide) => (
           <a
             key={slide.id}
-            className="flex flex-col justify-between items-center gap-6 p-5 xl:gap-0 xl:p-3 flex-shrink-0 bg-white rounded-2xl shadow-2xl w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4"
+            className="flex flex-col justify-between items-center gap-6 p-5 xl:gap-0 xl:p-3 flex-shrink-0 bg-white rounded-2xl shadow-2xl w-4/5 md:w-2/5 lg:w-1/4 xl:w-1/5"
             onClick={() => handleProductClick(slide)}
           >
-            <Image
-              src={slide.src}
-              className="w-40 h-40 object-contain xl:w-24 "
-              alt={slide.alt}
-            />
-            <div>
-              <div className="font-bold capitalize xl:text-xs">
+            <div className="w-40 h-40">
+              <Image
+                src={slide.src}
+                alt={slide.alt}
+                width={160}
+                height={160}
+                className="object-contain w-full h-full py-2"
+              />
+            </div>
+            <div className="w-full text-start px-3">
+              <div className="font-bold capitalize text-sm text-wrap">
                 {slide.title}
               </div>
-              <div className="text-sm font-medium py-1 xl:text-xs">
+              <div className="text-sm text-gray-500 font-medium py-1 ">
                 Price ${slide.price}
               </div>
               <div className="flex items-center justify-between">
