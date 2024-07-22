@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState } from "react";
 import Image from "next/image";
 import Rating from "./rating";
@@ -22,16 +23,22 @@ const defaultProduct: ProductProp = {
 };
 
 function ProductDetail() {
-  const [ProductProp, setProductDetail] = useState<ProductProp>(defaultProduct);
-  if (!ProductProp) return null;
+  const [productProp, setProductDetail] = useState<ProductProp>(defaultProduct);
+  const [isCarouselVisible, setCarouselVisible] = useState(true); // State for carousel visibility
+
+  const toggleCarousel = () => {
+    setCarouselVisible((prev) => !prev); // Toggle the visibility
+  };
+
+  if (!productProp) return null;
 
   return (
-    <div className="w-auto ">
+    <div className="w-auto">
       <div className="w-auto m-2 flex flex-col lg:flex-row items-center justify-center gap-5 p-4 rounded-2xl shadow-2xl">
         <div className="w-40 md:w-auto px-5">
           <Image
-            src={ProductProp.src}
-            alt={ProductProp.alt}
+            src={productProp.src}
+            alt={productProp.alt}
             width={200}
             height={200}
             className="object-cover"
@@ -40,17 +47,17 @@ function ProductDetail() {
 
         <div className="w-full lg:w-2/3 flex flex-col lg:items-start">
           <h2 className="text-center md:text-start font-bold text-lg md:text-2xl lg:text-2xl capitalize py-2">
-            {ProductProp.title}
+            {productProp.title}
           </h2>
 
           <Rating />
 
           <p className="py-4 text-sm md:text-md lg:text-md">
-            {ProductProp.description}
+            {productProp.description}
           </p>
 
           <p className="text-sm md:text-xl py-0 md:py-3 text-[#00D4BC] lg:text-xl">
-            Price ${ProductProp.price}
+            Price ${productProp.price}
           </p>
 
           <div className="flex justify-between items-center gap-5 w-full">
@@ -63,13 +70,27 @@ function ProductDetail() {
                 <button className="w-3 h-3 rounded-full bg-[#fa1313] md:w-4 md:h-4 lg:w-6 lg:h-6"></button>
               </div>
             </span>
-            <ProductCount productId={ProductProp.id} />
+            <ProductCount productId={productProp.id} />
           </div>
 
-          <Button product={ProductProp} />
+          <Button product={productProp} />
         </div>
       </div>
-      <Carousel setSelectedProduct={setProductDetail} />
+
+      {/* Toggle Button */}
+      <div className="flex flex-col justify-center items-center mt-5">
+        {/* Conditionally render the Carousel */}
+        {isCarouselVisible && (
+          <Carousel setSelectedProduct={setProductDetail} />
+        )}
+        <button
+          onClick={toggleCarousel}
+          className="mb-4 px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600 focus:outline-none"
+        >
+          {isCarouselVisible ? "Hide Carousel" : "Show Carousel"}
+        </button>
+      </div>
+
       <Card />
     </div>
   );

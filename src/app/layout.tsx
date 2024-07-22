@@ -32,9 +32,11 @@ export default function RootLayout({
             <Navbar />
           </nav>
 
-          <div className="block md:flex">
+          <div className="flex">
             {/* <!-- Main Content --> */}
-            <main className="flex-grow pt-5">{children}</main>
+            <main className="flex-grow pt-5 mx-auto max-w-screen-lg">
+              {children}
+            </main>
 
             {/* <!-- Aside --> */}
             <aside className="h-full flex-shrink-0">

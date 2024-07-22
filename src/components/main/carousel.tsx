@@ -77,20 +77,21 @@ function Carousel({ setSelectedProduct }: CarouselProps) {
     setSelectedProduct(product);
     console.log(product);
   };
+
   const addToCart = useCartStore((state) => state.addToCart);
 
   return (
     <div className="relative overflow-hidden p-4 w-full">
       <div
-        className="flex gap-6 transition-transform duration-700 overflow-x-hidden"
+        className="flex gap-6 transition-transform duration-700"
         style={{
           transform: `translateX(-${(100 / slides.length) * activeSlide}%)`,
         }}
       >
         {slides.map((slide) => (
-          <a
+          <div
             key={slide.id}
-            className="flex flex-col justify-between items-center gap-6 p-5 xl:gap-0 xl:p-3 flex-shrink-0 bg-white rounded-2xl shadow-2xl w-4/5 md:w-2/5 lg:w-1/4 xl:w-1/5"
+            className="flex flex-col justify-between items-center gap-6 p-5 xl:gap-0 xl:p-3 bg-white rounded-2xl shadow-2xl w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 flex-shrink-0 cursor-pointer"
             onClick={() => handleProductClick(slide)}
           >
             <div className="w-40 h-40">
@@ -114,14 +115,17 @@ function Carousel({ setSelectedProduct }: CarouselProps) {
                   <IconStarFilled color="#00E0C6" size={18} /> {slide.rating}
                 </span>
                 <button
-                  onClick={() => addToCart(slide)}
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    addToCart(slide);
+                  }}
                   className="bg-[#009393] relative rounded-full p-1 text-white font-semibold focus:border-2 focus:border-[#009393]"
                 >
                   <IconPlus stroke={2} color="white" size={18} />
                 </button>
               </div>
             </div>
-          </a>
+          </div>
         ))}
       </div>
 

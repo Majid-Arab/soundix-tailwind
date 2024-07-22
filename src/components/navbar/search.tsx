@@ -1,6 +1,6 @@
 "use client";
 
-import { IconAdjustmentsHorizontal, IconSearch } from "@tabler/icons-react";
+import { IconSearch } from "@tabler/icons-react";
 import React, { useState } from "react";
 
 function Search() {
@@ -12,7 +12,7 @@ function Search() {
 
   return (
     <div className="relative text-gray-600 focus-within:text-gray-400">
-      <span className="absolute inset-y-0 left-0 sm:right-20 flex items-center">
+      <span className="absolute inset-y-0 left-0 flex items-center ">
         <button
           onClick={toggleSearch}
           className="p-1 focus:outline-none focus:shadow-outline"
@@ -22,22 +22,11 @@ function Search() {
       </span>
       <input
         type="search"
-        className={`py-2 text-xl text-white shadow-lg rounded-md pl-10 focus:outline-none focus:bg-white focus:text-gray-900 ${
+        className={`py-2 text-xl text-gray-900 bg-white shadow-lg rounded-md pl-10 focus:outline-none ${
           isSearchOpen ? "block" : "hidden lg:block"
         }`}
         placeholder="Search Product"
       />
-
-      <span className="absolute inset-y-0 right-0 flex items-center pl-2">
-        <button
-          type="submit"
-          className={`p-1 focus:outline-none focus:shadow-outline ${
-            isSearchOpen ? "block" : "hidden lg:block"
-          }`}
-        >
-          <IconAdjustmentsHorizontal stroke={2} />
-        </button>
-      </span>
     </div>
   );
 }

@@ -47,11 +47,8 @@ function Explore() {
   return (
     <div className="flex flex-wrap gap-4 justify-center">
       {products.map((product) => (
-        <div
-          key={product.id}
-          className="border rounded-lg p-4 w-60 shadow-lg"
-        >
-          <img
+        <div key={product.id} className="border rounded-lg p-4 w-60 shadow-lg">
+          <Image
             src={product.src}
             alt={product.alt}
             width={240}
@@ -65,7 +62,8 @@ function Explore() {
 
           <div className="flex items-center justify-between">
             <span className="flex items-start text-[#00E0C6] gap-1 pt-2">
-              <IconStarFilled color="#00E0C6" size={18} /> {product.rating.toFixed(1)}
+              <IconStarFilled color="#00E0C6" size={18} />{" "}
+              {product.rating.toFixed(1)}
             </span>
             <button
               onClick={() => addToCart(product)}

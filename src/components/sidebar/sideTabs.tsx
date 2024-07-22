@@ -20,7 +20,6 @@ function SideTabs() {
       icon: <IconBrandSafari stroke={2} />,
       link: "/explore",
     },
-    { label: "Saved", icon: <IconHome stroke={2} />, link: "/saved" },
     {
       label: "Cart",
       icon: <IconShoppingCart stroke={2} />,
@@ -31,15 +30,16 @@ function SideTabs() {
         </span>
       ),
     },
-    { label: "Selling", icon: <IconHome stroke={2} />, link: "/selling" },
-    { label: "Profile", icon: <IconHome stroke={2} />, link: "/profile" },
+    { label: "Saved", icon: <IconHome stroke={2} />, link: "#" },
+    { label: "Selling", icon: <IconHome stroke={2} />, link: "#" },
+    { label: "Profile", icon: <IconHome stroke={2} />, link: "#" },
     {
       label: "Purchase History",
       icon: <IconHome stroke={2} />,
-      link: "/purchase-history",
+      link: "#",
     },
-    { label: "Contact Us", icon: <IconHome stroke={2} />, link: "/contact" },
-    { label: "Settings", icon: <IconHome stroke={2} />, link: "/settings" },
+    { label: "Contact Us", icon: <IconHome stroke={2} />, link: "#" },
+    { label: "Settings", icon: <IconHome stroke={2} />, link: "#" },
   ];
 
   return (

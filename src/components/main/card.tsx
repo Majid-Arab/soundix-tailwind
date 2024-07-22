@@ -50,7 +50,7 @@ function Card() {
   return (
     <div className="flex flex-col gap-5 p-4 pb-20 xl:px-0">
       <div className="flex flex-wrap justify-between gap-3">
-        <span className="text-2xl md:text-3xl font-bold text-[#016173]">
+        <span className="font-bold text-lg md:text-2xl lg:text-3xl text-[#016173] py-2">
           Explore Popular Categories
         </span>
         <button
@@ -63,7 +63,7 @@ function Card() {
           </span>
         </button>
       </div>
-      <div className="flex flex-wrap justify-center gap-4 xl:gap-4">
+      <div className="flex flex-wrap justify-center gap-4 pb-5 md:pb-0 xl:gap-4">
         {cardData.map((card, index) => (
           <div
             key={index}
