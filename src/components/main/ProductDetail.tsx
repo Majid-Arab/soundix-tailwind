@@ -77,15 +77,13 @@ function ProductDetail() {
         </div>
       </div>
 
-      {/* Toggle Button */}
       <div className="flex flex-col justify-center items-center mt-5">
-        {/* Conditionally render the Carousel */}
         {isCarouselVisible && (
           <Carousel setSelectedProduct={setProductDetail} />
         )}
         <button
           onClick={toggleCarousel}
-          className="mb-4 px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600 focus:outline-none"
+          className="mb-4 px-4 py-2 text-black rounded hover:text-[#616060] focus:outline-none"
         >
           {isCarouselVisible ? "Hide Carousel" : "Show Carousel"}
         </button>
