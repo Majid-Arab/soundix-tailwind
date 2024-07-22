@@ -67,7 +67,7 @@ function Card() {
         {cardData.map((card, index) => (
           <div
             key={index}
-            className="flex flex-col md:flex-row justify-between items-center gap-6 xl:gap-0 xl:grow h-auto md:h-40 shadow-xl p-4 md:p-8 rounded-2xl bg-white w-full md:w-auto"
+            className="flex md:flex-row justify-center items-center gap-6 xl:gap-0 xl:grow h-auto md:h-40 shadow-xl p-4 md:p-8 rounded-2xl bg-white max-w-[400px] md:w-auto"
           >
             <div className="flex items-center space-x-[-10px] rtl:space-x-reverse relative">
               {slides.map((slide, index) => (
@@ -83,7 +83,7 @@ function Card() {
                 </div>
               ))}
             </div>
-            <div className="border-l-2 border-black h-full mx-5 hidden md:block"></div>
+            <span className="border-l-2 border-black h-full mx-5 "></span>
             <div className="flex flex-col gap-4 items-center md:items-start text-center md:text-left">
               <h2 className="font-bold text-sm md:text-lg xl:text-sm">
                 {card.title}
