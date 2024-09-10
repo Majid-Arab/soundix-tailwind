@@ -81,7 +81,7 @@ function Carousel({ setSelectedProduct }: CarouselProps) {
   const addToCart = useCartStore((state) => state.addToCart);
 
   return (
-    <div className="relative overflow-hidden p-4 max-w-[750px]">
+    <div className="relative overflow-hidden p-4 max-w-full">
       <div
         className="flex gap-6 transition-transform duration-700"
         style={{
@@ -91,7 +91,7 @@ function Carousel({ setSelectedProduct }: CarouselProps) {
         {slides.map((slide) => (
           <div
             key={slide.id}
-            className="flex flex-col justify-between items-center gap-6 p-5 xl:gap-0 xl:p-3 bg-white rounded-2xl shadow-2xl w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 flex-shrink-0 cursor-pointer"
+            className="flex flex-col justify-between items-center gap-6 p-5 xl:gap-0 xl:p-3 bg-white rounded-2xl shadow-2xl sm:w-1/2 md:w-1/3 lg:w-1/4 flex-shrink-0 cursor-pointer"
             onClick={() => handleProductClick(slide)}
           >
             <div className="w-40 h-40">
