@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="h-screen max-w-max mx-auto flex font-sans">
+      <body className="h-screen max-w-full xl:max-w-[90%] m-auto flex font-sans">
         {/* <!-- Sidebar --> */}
         <div className="h-full lg:w-72">
           <Sidebar />
@@ -34,7 +34,7 @@ export default function RootLayout({
 
           <div className="flex">
             {/* <!-- Main Content --> */}
-            <main className="flex-grow pt-5 mx-auto max-w-screen-lg">
+            <main className="flex-grow pt-5 w-full">
               {children}
             </main>
 

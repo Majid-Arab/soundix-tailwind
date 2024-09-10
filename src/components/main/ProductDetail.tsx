@@ -33,8 +33,8 @@ function ProductDetail() {
   if (!productProp) return null;
 
   return (
-    <div className="w-auto">
-      <div className="w-auto m-2 flex flex-col lg:flex-row items-center justify-center gap-5 p-4 rounded-2xl shadow-2xl">
+    <div>
+      <div className="m-2 flex flex-col lg:flex-row items-center justify-center gap-5 p-4 rounded-2xl shadow-2xl">
         <div className="w-40 md:w-auto px-5">
           <Image
             src={productProp.src}
@@ -77,17 +77,7 @@ function ProductDetail() {
         </div>
       </div>
 
-      <div className="flex flex-col justify-center items-center mt-5">
-        {isCarouselVisible && (
-          <Carousel setSelectedProduct={setProductDetail} />
-        )}
-        <button
-          onClick={toggleCarousel}
-          className="mb-4 px-4 py-2 text-black rounded hover:text-[#616060] focus:outline-none"
-        >
-          {isCarouselVisible ? "Hide Carousel" : "Show Carousel"}
-        </button>
-      </div>
+      <Carousel setSelectedProduct={setProductDetail} />
 
       <Card />
     </div>
