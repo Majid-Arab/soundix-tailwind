@@ -48,7 +48,7 @@ const cardData = [
 
 function Card() {
   return (
-    <div className="flex flex-col gap-5 p-4 pb-20 xl:px-0">
+    <div className="flex flex-col gap-5 m-2 p-4 pb-20 xl:px-0">
       <div className="flex flex-wrap justify-between gap-3">
         <span className="font-bold text-lg md:text-2xl lg:text-3xl text-[#016173] py-2">
           Explore Popular Categories

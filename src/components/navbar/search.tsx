@@ -12,7 +12,7 @@ function Search() {
 
   return (
     <div className="relative text-gray-600 focus-within:text-gray-400">
-      <span className="absolute inset-y-0 left-0 flex items-center ">
+      <span className="absolute inset-y-0 left-0 flex items-center">
         <button
           onClick={toggleSearch}
           className="p-1 focus:outline-none focus:shadow-outline"
